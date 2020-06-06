@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiFilmowe</name>
+    </assembly>
+    <members>
+        <member name="M:ApiFilmowe.Controllers.FilmsController.GetFilm(System.Int64)">
+            <summary>
+            Pobierz film o danym ID
+            </summary>
+            <param name="id">ID filmu</param>
+            <returns>Dane filmu w ppostaci klasy Film</returns>
+        </member>
+    </members>
+</doc>
