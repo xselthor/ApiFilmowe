@@ -32,6 +32,9 @@ namespace ApiFilmowe
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<BazaFilmowaContext>();
+            services.AddControllersWithViews().AddNewtonsoftJson(options =>
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                );
 
             services.AddSwaggerGen(c =>
             {

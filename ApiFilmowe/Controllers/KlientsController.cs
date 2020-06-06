@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -32,12 +33,20 @@ namespace ApiFilmowe.Controllers
         public async Task<ActionResult<Klient>> GetKlient(long id)
         {
             var klient = await _context.Klient.FindAsync(id);
+            var adres = await _context.Adres.FindAsync(klient.Id);
 
             if (klient == null)
             {
                 return NotFound();
             }
 
+            klient.Adres.KodPocztowy = adres.KodPocztowy;
+            klient.Adres.Miasto = adres.Miasto;
+            klient.Adres.NumerDomu = adres.NumerDomu;
+            klient.Adres.Ulica = adres.Ulica;
+            
+
+            
             return klient;
         }
 
