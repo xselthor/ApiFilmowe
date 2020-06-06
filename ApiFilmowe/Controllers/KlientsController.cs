@@ -45,8 +45,6 @@ namespace ApiFilmowe.Controllers
             klient.Adres.NumerDomu = adres.NumerDomu;
             klient.Adres.Ulica = adres.Ulica;
             
-
-            
             return klient;
         }
 
